@@ -1,5 +1,1 @@
-phpunitScheleton
-================
-
-A minimal configuration for running phpunit, autoloading, etc.
-Useful, for example, for started a kata.
+[Kata description](http://content.codersdojo.org/code-kata-catalogue/bowling-game/)

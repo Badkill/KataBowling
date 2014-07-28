@@ -73,7 +73,7 @@ class FrameTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(18, $frame->score());
     }
 
-    public function testNeedBonus()
+    public function testNeedBonusForStrike()
     {
         $frame = new Frame();
         $this->assertFalse($frame->needBonus());
@@ -83,7 +83,10 @@ class FrameTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($frame->needBonus());
         $frame->roll(3);
         $this->assertFalse($frame->needBonus());
+    }
 
+    public function testNeedBonusForSpare()
+    {
         $frame = new Frame();
         $this->assertFalse($frame->needBonus());
         $frame->roll(5);

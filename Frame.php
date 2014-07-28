@@ -5,21 +5,13 @@ class Frame
     private $rolls = [];
     private $bonus = [];
 
-    public function __construct()
-    {
-    }
-
     public function roll($pin)
     {
-        if (2 === count($this->rolls)) {
+        if ($this->isComplete()) {
             return $this->bonus($pin);
         }
 
         $this->rolls[] = $pin;
-
-        if (10 === $pin) {
-            $this->rolls[] = 0;
-        }
     }
 
     public function score()
@@ -35,7 +27,7 @@ class Frame
     public function isStrike()
     {
         return
-            1 < count($this->rolls) &&
+            isset($this->rolls[0]) &&
             10 === $this->rolls[0]
         ;
     }
